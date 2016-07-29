@@ -12,8 +12,12 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
-    <%= yield %>
+      <%= render 'layouts/header' %>
+      <% flash.each do |name, msg| %>
+          <!-- <div class="#{name}"> msg </div> -->
+          <%= content_tag :div, msg, class: name %>
+      <% end %>
+      <%= yield %>
 
   </body>
 </html>
