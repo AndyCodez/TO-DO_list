@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'lists/new'
+
+  get 'lists/index'
+
+  get 'lists/show'
+
   root 'static_pages#home'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
