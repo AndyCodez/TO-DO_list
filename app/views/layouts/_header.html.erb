@@ -6,7 +6,7 @@
     </div>
     <div class="top-bar-right">
         <ul class="menu">
-            <li>HOME</li>
+            <li><%= link_to "HOME", root_path %></li>
             <li>YOUR LISTS</li>
             <% if logged_in? %>
                 <li><%= link_to "LOGOUT", logout_path, method: :delete %></li>
