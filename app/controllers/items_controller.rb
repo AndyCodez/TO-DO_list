@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
     @item = @card.items.build(item_params)
     if @item.save
       flash[:success] = "New to-do item added!"
-      redirect_to root_url
+      redirect_to list_path(id: @card.list_id) 
     else
       flash[:danger] = "Something went wrong. Please, try again."
       render 'new'
