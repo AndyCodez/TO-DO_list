@@ -1,3 +1,13 @@
-<li><%= card.title %></li>
-
+<div class= "cards">
+    <h3><%= card.title %></h3>
+    <h5>Descripton: <%= card.description %></h5>
+    <table>
+        <thead>
+            <th>TO-DO items</th>
+            <th></th><!--Space for condition-->
+            <th>Mark Done</th>
+            <th><%= link_to "New ToDo item", '#' %></th>
+        </thead>
+    </table>
+</div>
 

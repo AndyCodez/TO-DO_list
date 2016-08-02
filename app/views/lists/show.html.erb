@@ -1,7 +1,7 @@
 <h3><%= @list.title %></h3>
 <%= link_to "Create a new card", new_card_path(list_id: @list.id) %>
 
-<div class="cards">
+<div class="all_cards">
     <%= render @cards %>
 </div>
 
