@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  activity: MyString
+  condition: 1
+  status: 1
+  card: one
+
+two:
+  activity: MyString
+  condition: 1
+  status: 1
+  card: two
