@@ -9,7 +9,8 @@ class CardsController < ApplicationController
     @card = @list.cards.build(card_params)
     if @card.save
       flash[:success] = "Card added!"
-      redirect_to root_url
+      #Redirect to the same list 
+      redirect_to list_path(id: @list.id)
     else
       flash.now[:danger] = "Something went wrong, please try again."
       render 'new'
