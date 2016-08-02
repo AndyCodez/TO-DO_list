@@ -1,0 +1,7 @@
+<h3>Add a TODO item to "<%= @card.title %>" card</h3>
+
+<%= form_for(@item, url: items_path(card_id: @card.id)) do |f| %>
+    <%= f.text_field :activity, placeholder: "Activity" %>
+    <%= f.text_field :condition %>
+    <%= f.submit "Add item"%>
+<% end %>
