@@ -1,0 +1,32 @@
+<table>
+    <thead>
+        <th>TODO item</th>
+        <th></th>
+        <th>Status</th>
+        <th>User</th>
+    </thead>
+<% @items. each do |item| %>
+<tr> 
+    <td><%= item.activity %></td>
+    <td>
+        <% if item.condition == "Public" %>
+            <span class="secondary label">
+        <% else %>
+            <span class="warning label">
+        <% end %>
+            <%= item.condition %>
+            </span>
+    </td>
+    <td> 
+        <% if item.status == "incomplete" %> 
+            Incomplete
+        <% else %>
+            <b>DONE</b>
+        <% end %>
+    </td>
+    <td>
+    </td>
+
+</tr>
+<% end %>
+</table>

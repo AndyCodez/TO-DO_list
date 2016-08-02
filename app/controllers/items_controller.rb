@@ -19,6 +19,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def index
+    @items = Item.where(condition: "Public")
+  end
+
   def mark_done
     item = Item.find_by(id: params[:item_id])
     item.update_attribute(:status, "done")
