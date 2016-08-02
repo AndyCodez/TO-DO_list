@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   post 'new_cards' => 'cards#create'
   get 'new_item' => 'items#new'
+  get 'mark_done' => 'items#mark_done'
 
   resources :users
   resources :sessions

@@ -1,7 +1,13 @@
 <tr> 
     <td><%= item.activity %></td>
     <td><%= item.condition %></td>
-    <td></td>
+    <td> 
+        <% if item.status == "incomplete" %> 
+            <span class="label"> <%= link_to "Mark Done", mark_done_path(item_id: item.id) %></span>
+        <% else %>
+            <b>DONE</b>
+        <% end %>
+    </td>
     <td></td>
 
 </tr>

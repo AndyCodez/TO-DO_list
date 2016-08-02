@@ -19,6 +19,13 @@ class ItemsController < ApplicationController
     end
   end
 
+  def mark_done
+    item = Item.find_by(id: params[:item_id])
+    item.update_attribute(:status, "done")
+    flash[:success] = "TO-DO Item marked as done."
+    redirect_back fallback_location: root_url
+  end
+
   private
     def item_params
       params.require(:item).permit(:activity, :condition)
