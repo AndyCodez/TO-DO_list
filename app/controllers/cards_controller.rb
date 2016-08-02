@@ -19,6 +19,19 @@ class CardsController < ApplicationController
     end
   end
 
+  def move_card
+    @card = Card.find_by(id: params[:card_id])
+    @lists = current_user.lists
+  end
+
+  def choose_list
+    card = Card.find(params[:card_id]) 
+    card.update_attribute(:list_id, params[:list_id])
+    flash[:success] = "Card successfully moved!"
+    #Redirect to the list the card has been moved to
+    redirect_to list_path(id:params[:list_id])
+  end
+
   private
     def card_params
       params.require(:card).permit(:title, :description)

@@ -1,0 +1,6 @@
+<h4>Move "<%= @card.title %>" card to: </h4>
+
+<% @lists.each do |list| %>
+    <!--Show all the other lists except that which the card already belongs to-->
+    <li><%= link_to "#{list.title}", choose_list_path(card_id: @card.id, list_id: list.id) unless list.id == @card.list_id %></li>
+<% end %>

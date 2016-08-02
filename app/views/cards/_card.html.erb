@@ -4,7 +4,9 @@
     
     <p>
     <%= link_to "New ToDo item", 
-        new_item_path(card_id: card.id) %>
+        new_item_path(card_id: card.id) %> |
+        
+        <%= link_to "Move Card", move_card_path(card_id: card.id) %>
     </p>
     <table>
         <thead>

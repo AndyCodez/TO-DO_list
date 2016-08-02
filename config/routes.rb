@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'new_item' => 'items#new'
   get 'mark_done' => 'items#mark_done'
   get 'undo' => 'items#undo'
+  get 'move_card' => 'cards#move_card'
+  get 'choose_list' => 'cards#choose_list'
 
   resources :users
   resources :sessions
