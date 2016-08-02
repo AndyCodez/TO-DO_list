@@ -1,0 +1,6 @@
+<h3>Add new card</h3>
+<%= form_for(@card) do |f| %>
+    <%= f.text_field :title, placeholder: "Title"%>
+    <%= f.text_field :description, placeholder: "Description" %>
+    <%= f.submit "Create Card" %>
+<% end %>
