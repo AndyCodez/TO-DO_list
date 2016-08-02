@@ -8,7 +8,13 @@
             <b>DONE</b>
         <% end %>
     </td>
-    <td></td>
+    <td>
+        <% if item.status == "done" %>
+            <span class="label">
+                <%= link_to "UNDO", undo_path(item_id: item.id) %>
+            </span>
+        <% end %>
+    </td>
 
 </tr>
 

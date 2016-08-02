@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'new_cards' => 'cards#create'
   get 'new_item' => 'items#new'
   get 'mark_done' => 'items#mark_done'
+  get 'undo' => 'items#undo'
 
   resources :users
   resources :sessions
