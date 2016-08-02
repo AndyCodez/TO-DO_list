@@ -1,6 +1,14 @@
 <tr> 
     <td><%= item.activity %></td>
-    <td><%= item.condition %></td>
+    <td>
+        <% if item.condition == "Public" %>
+            <span class="secondary label">
+        <% else %>
+            <span class="warning label">
+        <% end %>
+            <%= item.condition %>
+            </span>
+    </td>
     <td> 
         <% if item.status == "incomplete" %> 
             <span class="label"> <%= link_to "Mark Done", mark_done_path(item_id: item.id) %></span>
