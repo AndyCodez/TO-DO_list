@@ -8,6 +8,12 @@
             <th>Mark Done</th>
             <th><%= link_to "New ToDo item", new_item_path(card_id: card.id) %></th>
         </thead>
+        <tbody>
+            <div class="items">
+                <% @items = card.items %>
+                <%= render @items %>
+            </div>
+        </tbody>
     </table>
 </div>
 
