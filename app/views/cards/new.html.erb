@@ -1,5 +1,5 @@
-<h3>Add new card</h3>
-<%= form_for(@card) do |f| %>
+<h3>Add new card to "<%= @list.title %>" list</h3>
+<%= form_for(@card, url: new_cards_path(list_id: @list.id)) do |f| %>
     <%= f.text_field :title, placeholder: "Title"%>
     <%= f.text_field :description, placeholder: "Description" %>
     <%= f.submit "Create Card" %>
