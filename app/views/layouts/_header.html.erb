@@ -10,7 +10,7 @@
             <% if logged_in? %>
                 <li><%= link_to "YOUR LISTS", lists_path %></li>
                 <li><%= link_to "OTHER'S TODOs", other_todos_path %></li>
-                <li><%= link_to "REQUESTED TODOs", '#' %></li>
+                <li><%= link_to "REQUESTED TODOs", requested_cards_path %></li>
                 <li><%= link_to "LOGOUT", logout_path, method: :delete %></li>
             <% else %>
                 <li><%= link_to "LOGIN", login_path %></li>

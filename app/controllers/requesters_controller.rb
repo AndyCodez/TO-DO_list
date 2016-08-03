@@ -11,6 +11,11 @@ class RequestersController < ApplicationController
     end
   end
 
+  def requested_cards
+    #Requests not made by this user
+    @requesters = Requester.where.not(user_id: current_user.id)
+  end
+
   private
     def requester_params
       params.permit(:card_id, :user_id)

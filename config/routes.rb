@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'move_card' => 'cards#move_card'
   get 'choose_list' => 'cards#choose_list'
   get 'new_request' => 'requesters#new'
+  get 'requested_cards' => 'requesters#requested_cards'
 
   resources :users
   resources :sessions
