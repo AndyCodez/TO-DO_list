@@ -33,9 +33,9 @@
         <%= item.card.list.user.name %>
     </td>
     <td>
-        <span class="label"><%= link_to "Request to Edit Card", 
-            new_request_path(card_id: item.card.id, 
-                             user_id: current_user.id)%></span>
+                <span class="label"><%= link_to "Request to Edit Card", 
+                    new_request_path(card_id: item.card.id, 
+                                    user_id: current_user.id)%></span>
     </td>
 
 </tr>

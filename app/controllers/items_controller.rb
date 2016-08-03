@@ -29,6 +29,8 @@ class ItemsController < ApplicationController
         @items << item
       end
     end
+
+    # @requesters = Requester.where(user_id: current_user.id)
   end
 
   def mark_done
