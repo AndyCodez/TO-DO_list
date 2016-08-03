@@ -3,6 +3,7 @@
         <th>TODO item</th>
         <th></th>
         <th>Status</th>
+        <th>Associated Card</th>
         <th>User</th>
     </thead>
 <% @items.each do |item| %>
@@ -23,6 +24,9 @@
         <% else %>
             <b>DONE</b>
         <% end %>
+    </td>
+    <td>
+        <%= item.card.title %>
     </td>
     <td>
         <%= item.card.list.user.name %>
