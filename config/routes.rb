@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'other_todos' => 'items#index'
   get 'move_card' => 'cards#move_card'
   get 'choose_list' => 'cards#choose_list'
+  get 'new_request' => 'requesters#new'
 
   resources :users
   resources :sessions

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160802094230) do
+ActiveRecord::Schema.define(version: 20160803193917) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "title"
@@ -38,6 +38,14 @@ ActiveRecord::Schema.define(version: 20160802094230) do
     t.datetime "updated_at", null: false
     t.index ["user_id", "created_at"], name: "index_lists_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
+  create_table "requesters", force: :cascade do |t|
+    t.integer  "card_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["card_id"], name: "index_requesters_on_card_id"
   end
 
   create_table "users", force: :cascade do |t|
