@@ -20,7 +20,15 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.where(condition: "Public")
+    @items = []
+    public_items = Item.where(condition: "Public")
+    public_items.each do |item|
+      #The array should only contain items 
+      #that don't belong to the current user
+      if item.card.list.user != current_user
+        @items << item
+      end
+    end
   end
 
   def mark_done
