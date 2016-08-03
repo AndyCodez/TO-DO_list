@@ -5,6 +5,7 @@
         <th>Status</th>
         <th>Associated Card</th>
         <th>User</th>
+        <th></th>
     </thead>
 <% @items.each do |item| %>
 <tr> 
@@ -30,6 +31,9 @@
     </td>
     <td>
         <%= item.card.list.user.name %>
+    </td>
+    <td>
+        <span class="label"><%= link_to "Request to Edit Card", '#'%></span>
     </td>
 
 </tr>
