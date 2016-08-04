@@ -7,6 +7,7 @@
         <th>User</th>
         <th></th>
     </thead>
+    <tbody>
 <% @items.each do |item| %>
 <tr> 
     <td><%= item.activity %></td>
@@ -33,11 +34,16 @@
         <%= item.card.list.user.name %>
     </td>
     <td>
+        <% if current_user_is_not_requester?(item.card) %>
                 <span class="label"><%= link_to "Request to Edit Card", 
                     new_request_path(card_id: item.card.id, 
                                     user_id: current_user.id)%></span>
+            <% else %>
+                <b>Requested</b>
+            <% end %>
     </td>
 
 </tr>
 <% end %>
+</tbody>
 </table>

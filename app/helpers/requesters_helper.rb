@@ -1,10 +1,13 @@
 module RequestersHelper
   
-  def current_user_is_requester?
-    card = Card.find(params[:card_id])
-    requesters = card.requesters
+  #Refactor this later
+  #Returns true if current_user has not requested the said card
+  def current_user_is_not_requester?(card_to_check)
+    requesters = card_to_check.requesters
     requesters.each do |requester|
-      requester.user_id == current_user.id ? true : false
+      if requester.user_id == current_user.id
+        return false
+      end
     end
   end
 
