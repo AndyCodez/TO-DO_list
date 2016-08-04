@@ -1,6 +1,7 @@
 <h3>Accepted Requests List</h3>
-<div class="cards">
-    <% @requests.each do |request| %>
+<% @requests.each do |request| %>
+
+    <div class="cards">
         <h3><%= request.card.title %></h3>
         <h5>Description: <%= request.card.description %></h5>
 
@@ -8,41 +9,41 @@
         <%= link_to "New ToDo item", 
             new_item_path(card_id: request.card.id) %> |
             Card belongs to: <%= request.card.list.user.name %>
-        </p>
-        <table>
-            <thead>
-                <th>TO-DO items</th>
-                <th></th><!--Space for condition-->
-                <th>Status</th>
-            </thead>
-            <tbody>
-                <div class="items">
-                    <% @items = request.card.items %>
-                    <%# <%= render @items %1> %>
-                    <% @items.each do |item| %>
-                        <% if item.condition == "Public" %>
-                            <tr> 
-                                <td><%= item.activity %></td>
-                                <td>
-                                    <span class="secondary label">
-                                        <%= item.condition %>
-                                    </span>
-                                </td>
-                                <td> 
-                                    <% if item.status == "incomplete" %> 
-                                        Incomplete
-                                    <% else %>
-                                        <b>DONE</b>
-                                    <% end %>
-                                </td>
+    </p>
+    <table>
+        <thead>
+            <th>TO-DO items</th>
+            <th></th><!--Space for condition-->
+            <th>Status</th>
+        </thead>
+        <tbody>
+            <div class="items">
+                <% @items = request.card.items %>
+                <%# <%= render @items %1> %>
+                <% @items.each do |item| %>
+                    <% if item.condition == "Public" %>
+                        <tr> 
+                            <td><%= item.activity %></td>
+                            <td>
+                                <span class="secondary label">
+                                    <%= item.condition %>
+                                </span>
+                            </td>
+                            <td> 
+                                <% if item.status == "incomplete" %> 
+                                    Incomplete
+                                <% else %>
+                                    <b>DONE</b>
+                                <% end %>
+                            </td>
 
-                            </tr>
-                        <% end %>
+                        </tr>
                     <% end %>
+                <% end %>
 
-                </div>
-            </tbody>
-        </table>
+            </div>
+        </tbody>
+    </table>
 
-    <% end %>
-</div>
+    </div>
+<% end %>
