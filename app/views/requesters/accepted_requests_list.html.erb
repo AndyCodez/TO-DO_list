@@ -14,13 +14,33 @@
             <thead>
                 <th>TO-DO items</th>
                 <th></th><!--Space for condition-->
-                <th>Mark Done</th>
-                <th></th>
+                <th>Status</th>
             </thead>
             <tbody>
                 <div class="items">
                     <% @items = request.card.items %>
-                    <%= render @items %>
+                    <%# <%= render @items %1> %>
+                    <% @items.each do |item| %>
+                        <% if item.condition == "Public" %>
+                            <tr> 
+                                <td><%= item.activity %></td>
+                                <td>
+                                    <span class="secondary label">
+                                        <%= item.condition %>
+                                    </span>
+                                </td>
+                                <td> 
+                                    <% if item.status == "incomplete" %> 
+                                        Incomplete
+                                    <% else %>
+                                        <b>DONE</b>
+                                    <% end %>
+                                </td>
+
+                            </tr>
+                        <% end %>
+                    <% end %>
+
                 </div>
             </tbody>
         </table>
