@@ -12,7 +12,12 @@ class ItemsController < ApplicationController
     @item = @card.items.build(item_params)
     if @item.save
       flash[:success] = "New to-do item added!"
-      redirect_to list_path(id: @card.list_id) 
+      #If owner of the card is not the current_user
+      if @card.list.user != current_user
+        redirect_to accepted_requests_list_path
+      else
+        redirect_to list_path(id: @card.list_id) 
+      end
     else
       flash[:danger] = "Something went wrong. Please, try again."
       render 'new'
