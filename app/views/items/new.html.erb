@@ -2,6 +2,11 @@
 
 <%= form_for(@item, url: items_path(card_id: @card.id)) do |f| %>
     <%= f.text_field :activity, placeholder: "Activity" %>
-    <%= f.text_field :condition %>
+    <!--To prevent user who doesn't own the card from adding a private todo-->
+    <% if @card.list.user != current_user %>
+        <p>This item will be <span class="secondary label">Public</span> by default.</p>
+    <% else %>
+        <%= f.text_field :condition %>
+    <% end %>
     <%= f.submit "Add item"%>
 <% end %>
