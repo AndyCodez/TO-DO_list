@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'choose_list' => 'cards#choose_list'
   get 'new_request' => 'requesters#new'
   get 'requested_cards' => 'requesters#requested_cards'
+  get 'accept_request' => 'requesters#accept_request'
+  get 'accepted_requests_list' => 'requesters#accepted_requests_list'
 
   resources :users
   resources :sessions

@@ -1,6 +1,6 @@
 <h3>All lists</h3>
 <%= link_to "Create a new list", new_list_path %> |
-<%= link_to "Accepted Requests", '#' %>
+<%= link_to "Accepted Requests", accepted_requests_list_path %>
 <% if @lists.any? %>
     <% @lists.each do |list| %>
         <li><%= link_to "#{list.title}", list_path(id: list.id) %></li>

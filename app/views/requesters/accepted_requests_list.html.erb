@@ -1,0 +1,29 @@
+<h3>Accepted Requests List</h3>
+<div class="cards">
+    <% @requests.each do |request| %>
+        <h3><%= request.card.title %></h3>
+        <h5>Description: <%= request.card.description %></h5>
+
+        <p>
+        <%= link_to "New ToDo item", 
+            new_item_path(card_id: request.card.id) %> |
+
+            <%= link_to "Move Card", move_card_path(card_id: request.card.id) %>
+        </p>
+        <table>
+            <thead>
+                <th>TO-DO items</th>
+                <th></th><!--Space for condition-->
+                <th>Mark Done</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <div class="items">
+                    <% @items = request.card.items %>
+                    <%= render @items %>
+                </div>
+            </tbody>
+        </table>
+
+    <% end %>
+</div>
