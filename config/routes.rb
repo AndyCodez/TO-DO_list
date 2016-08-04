@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'requested_cards' => 'requesters#requested_cards'
   get 'accept_request' => 'requesters#accept_request'
   get 'accepted_requests_list' => 'requesters#accepted_requests_list'
+  get 'reject_request' => 'requesters#reject_request'
 
   resources :users
   resources :sessions

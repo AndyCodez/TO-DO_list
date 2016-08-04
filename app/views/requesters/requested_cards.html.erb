@@ -14,8 +14,10 @@
                     <%= @user.name %>
                 </td>
                 <td>
-                    <span class="label"><%= link_to "Accept", accept_request_path(request_id: requester.id) %></span>
-                    <span class="label"><%= link_to "Reject", '#' %></span>
+                    <span class="label"><%= link_to "Accept", 
+                        accept_request_path(request_id: requester.id) %></span>
+                    <span class="label"><%= link_to "Reject", 
+                        reject_request_path(request_id: requester.id) %></span>
                 </td>
             </tr>
         <% end %>

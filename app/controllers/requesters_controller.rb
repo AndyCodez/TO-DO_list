@@ -27,6 +27,13 @@ class RequestersController < ApplicationController
     redirect_to requested_cards_path
   end
 
+  def reject_request
+    request = Requester.find(params[:request_id])
+    request.update_attribute(:status, "rejected")
+    flash[:success] = "Request has been rejected!"
+    redirect_to requested_cards_path
+  end
+
   def accepted_requests_list
     @requests = Requester.where(user_id: current_user.id, status: "accepted")
   end
