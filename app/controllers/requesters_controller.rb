@@ -21,7 +21,6 @@ class RequestersController < ApplicationController
   end
 
   def accept_request
-    # @card = Card.find(params[:card_id])
     request = Requester.find(params[:request_id])
     request.update_attribute(:status, "accepted")
     flash[:success] = "Request has been accepted!"
