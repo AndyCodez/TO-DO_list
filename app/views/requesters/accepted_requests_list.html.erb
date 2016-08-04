@@ -7,8 +7,7 @@
         <p>
         <%= link_to "New ToDo item", 
             new_item_path(card_id: request.card.id) %> |
-
-            <%= link_to "Move Card", move_card_path(card_id: request.card.id) %>
+            Card belongs to: <%= request.card.list.user.name %>
         </p>
         <table>
             <thead>
