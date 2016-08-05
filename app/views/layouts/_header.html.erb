@@ -11,7 +11,7 @@
                 <li><%= link_to "YOUR LISTS", lists_path %></li>
                 <li><%= link_to "OTHER'S TODOs", other_todos_path %></li>
                 <li><%= link_to "REQUESTED TODOs", requested_cards_path %></li>
-                <li><%= link_to "LOGOUT", logout_path, method: :delete %></li>
+                <li><span class="alert label" id="logout"><%= link_to fa_icon('power-off', text: 'LOGOUT'), logout_path, method: :delete %></span></li>
             <% else %>
                 <li><%= link_to "LOGIN", login_path %></li>
             <% end %>
