@@ -16,6 +16,7 @@ class ListsController < ApplicationController
   end
 
   def index
+    #Gets all lists associated with the current user
     @lists = current_user.lists
   end
 
