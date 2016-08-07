@@ -6,7 +6,11 @@
     <% if @card.list.user != current_user %>
         <p>This item will be <span class="secondary label">Public</span> by default.</p>
     <% else %>
-        <%= f.text_field :condition %>
+    <%= f.label :condition do %>
+        <%= f.check_box :condition %>
+        <span>Private</span>
+    <% end %>
+        <%# <%= f.text_field :condition %1> %>
     <% end %>
     <%= f.submit "Add item"%>
 <% end %>

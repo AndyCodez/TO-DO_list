@@ -9,6 +9,8 @@ class ItemsController < ApplicationController
 
   def create
     @card = Card.find_by(id: params[:card_id])
+    params[:item][:condition] == '1' ? params[:item][:condition] = "Private" : params[:item][:condition] = "Public"
+
     @item = @card.items.build(item_params)
     if @item.save
       flash[:success] = "New to-do item added!"
