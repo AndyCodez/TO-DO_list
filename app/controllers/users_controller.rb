@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       log_in @user
       @user.send_activation_email
       flash[:success] = "Please check your email to activate your account."
-      redirect_to @user
+      redirect_to lists_path
     else
       render 'new'
     end
@@ -18,7 +18,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-
   end
 
   private

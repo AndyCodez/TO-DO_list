@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'accepted_requests_list' => 'requesters#accepted_requests_list'
   get 'reject_request' => 'requesters#reject_request'
 
-  resources :users
+  resources :users, only: [:new, :create]
   resources :sessions
   resources :account_activations, only: [:edit]
   resources :lists
