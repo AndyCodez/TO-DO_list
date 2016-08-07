@@ -1,4 +1,14 @@
-<h3>TODO list App</h3>
-<h4>Welcome</h4>
-<%= link_to "SIGNUP", signup_path %>
-<%= link_to "LOGIN", login_path %>
+<div class="home-content">
+    <% if logged_in? %>
+    <h2>HOMEPAGE</h>
+    <h4>ToDoList is meant to make management of your tasks easier. Contact us in case of any questions.</h4>
+    <span class="label" id="home_signup"><%= link_to "CONTACT US" %></span>
+    <% else %>
+    <h2>Do Much More.</h2>
+
+    <h4>Join the thousands of people using ToDoList to ensure there lives are in check!</h4>
+    <span class="label" id="home_signup"><%= link_to "SIGNUP", signup_path %></span>
+    <span class="label" id="home_login"><%= link_to "LOGIN", login_path %></span>
+
+    <% end %>
+</div>
