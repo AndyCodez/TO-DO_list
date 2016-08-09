@@ -58,4 +58,13 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
 
+  test "login within 2 days after signup without activation" do
+    user = users(:gee)
+    assert_not user.activated?
+    log_in_as(user)
+    assert is_logged_in?
+    assert flash.empty?
+    assert_redirected_to lists_path
+  end
+
 end

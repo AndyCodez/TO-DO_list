@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(name: params[:session][:name])
     if user && user.authenticate(params[:session][:password])
-      if user.created_at > 2.days && !user.activated?
+      if time_from_signup(user) > 2.days && !user.activated?
         #Deny full access to app functionality
         flash[:danger] = "Please check your email and activate your account."
         redirect_to root_url
