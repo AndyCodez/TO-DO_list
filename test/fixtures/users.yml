@@ -7,3 +7,11 @@ makatunga:
     activated: true
     created_at: <%= Time.zone.now %>
     activated_at: <%= Time.zone.now %>
+
+bradhe:
+    name: Cess
+    email: cess@example.gov    
+    password_digest: <%= User.digest('password') %>
+    created_at: <%= 2.days.ago %>
+    activated: false
+    activated_at: <%= Time.zone.now %>

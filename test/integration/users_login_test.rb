@@ -48,4 +48,14 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     log_in_as(@user, remember_me: '0')
     assert_nil cookies['remember_token']
   end
+
+  test "login 2 days after signup without activation" do
+    user = users(:bradhe)
+    assert_not user.activated?
+    log_in_as(user)
+    assert_not is_logged_in?
+    assert_not flash.empty?
+    assert_redirected_to root_url
+  end
+
 end
