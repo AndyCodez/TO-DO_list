@@ -9,6 +9,9 @@ gem 'foundation-rails'
 
 gem 'font-awesome-rails'
 
+#To test using methods such as "assert_template" and "assigns"
+gem 'rails-controller-testing'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
