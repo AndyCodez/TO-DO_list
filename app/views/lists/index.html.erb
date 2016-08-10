@@ -7,7 +7,7 @@
         <%= f.submit "Create List" %>
     <% end %>
 </div>
-
+<div id="all_lists">
 <%= link_to "Create a new list", new_list_path %> |
 <%= link_to "Accepted Requests", accepted_requests_list_path %>
 <% if @lists.any? %>
@@ -15,3 +15,4 @@
         <li><%= link_to "#{list.title}", list_path(id: list.id) %></li>
     <% end %>
 <% end %>
+</div>
