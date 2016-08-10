@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
+listi:
+    id: 2
+    user_id: 1
+    title: Ndio Listi Hii
 
 two:
-  title: MyString
+    title: MyString
