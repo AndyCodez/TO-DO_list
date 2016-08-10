@@ -1,28 +1,27 @@
-<div class="top-bar">
-    <div class="top-bar-left">
-        <li class="menu-text">
-            <%= link_to "ToDoList App", root_path %>
-        </li>
-    </div>
-    <div class="top-bar-right">
-        <ul class=" dropdown menu" data-dropdown-menu>
-            <% if logged_in? %>
-                <li><%= link_to "YOUR LISTS", lists_path %></li>
-                <li>
-                    <%= link_to "REQUESTS", '#' %>
-                    <ul class="menu vertical">
-                        <li><%= link_to "YOUR REQUESTS", other_todos_path %></li>
-                        <li><%= link_to "AWAITING YOUR RESPONSE", requested_cards_path %></li>                       
-                    </ul>
-                </li>
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <li class="menu-text">
+                <%= link_to "ToDoList App", root_path %>
+            </li>
+        </div>
+        <div class="top-bar-right">
+            <ul class=" dropdown menu" data-dropdown-menu>
+                <% if logged_in? %>
+                    <li><%= link_to "YOUR LISTS", lists_path %></li>
+                    <li>
+                        <%= link_to "REQUESTS", '#' %>
+                        <ul class="menu vertical">
+                            <li><%= link_to "YOUR REQUESTS", other_todos_path %></li>
+                            <li><%= link_to "AWAITING YOUR RESPONSE", requested_cards_path %></li>                       
+                        </ul>
+                    </li>
 
-                <li><span class="profile_name"><%= current_user.name %></span></li>
-                <li><span class="alert label" id="logout"><%= link_to fa_icon('power-off', text: 'LOGOUT'), logout_path, method: :delete %></span></li>
-            <% else %>
-                <li><span class="label" id="signup_label"><%= link_to "SIGN UP", signup_path %></span></li>
-                <li><%= link_to "LOGIN", login_path %></li>
-            <% end %>
-        </ul>
+                    <li><span class="profile_name"><%= current_user.name %></span></li>
+                    <li><span class="alert label" id="logout"><%= link_to fa_icon('power-off', text: 'LOGOUT'), logout_path, method: :delete %></span></li>
+                <% else %>
+                    <li><span class="label" id="signup_label"><%= link_to "SIGN UP", signup_path %></span></li>
+                    <li><%= link_to "LOGIN", login_path %></li>
+                <% end %>
+            </ul>
+        </div>
     </div>
-</div>
-
