@@ -5,5 +5,7 @@ listi:
     user_id: 1
     title: Ndio Listi Hii
 
-two:
+another_list:
+    id: 3
+    user_id: 1
     title: MyString
