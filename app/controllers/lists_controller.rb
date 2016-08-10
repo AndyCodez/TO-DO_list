@@ -1,9 +1,5 @@
 class ListsController < ApplicationController
 
-  def new
-    @list = List.new
-  end
-
   def create
     @list = current_user.lists.build(list_params)
     if @list.save
@@ -16,6 +12,8 @@ class ListsController < ApplicationController
   end
 
   def index
+    #Helps create the form
+    @list = List.new
     #Gets all lists associated with the current user
     @lists = current_user.lists
   end
