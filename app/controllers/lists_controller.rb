@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-
+  before_action :correct_user, only: [:show]
   skip_before_filter :verify_authenticity_token, :only => :create
 
   def create
@@ -41,5 +41,11 @@ class ListsController < ApplicationController
   private
     def list_params
       params.require(:list).permit(:title)
+    end
+
+    #Confirms list belongs to the correct user
+    def correct_user
+      @list = current_user.lists.find_by(id: params[:id])
+      redirect_to root_url if @list.nil?
     end
 end
