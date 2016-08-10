@@ -26,6 +26,9 @@ class ListsController < ApplicationController
   end
 
   def show
+    #To create form
+    @card = Card.new
+
     @list = List.find_by(id: params[:id])
     @cards = @list.cards
   end

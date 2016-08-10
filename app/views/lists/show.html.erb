@@ -1,7 +1,18 @@
 <h3><%= @list.title %></h3>
-<%= link_to "Create a new card", new_card_path(list_id: @list.id) %>
-
-<div class="all_cards">
-    <%= render @cards %>
+<div class="row">
+    <div class="medium-8 columns">
+        <div class="all_cards">
+            <%= render @cards %>
+        </div>
+    </div>
+    <div class="medium-4 columns">
+        <div class="create-form">
+            <h3>Add new card to "<%= @list.title %>" list</h3>
+            <%= form_for(@card, url: new_cards_path(list_id: @list.id)) do |f| %>
+                <%= f.text_field :title, placeholder: "Title"%>
+                <%= f.text_field :description, placeholder: "Description" %>
+                <%= f.submit "Create Card" %>
+            <% end %>
+        </div>
+    </div>
 </div>
-

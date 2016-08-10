@@ -4,15 +4,15 @@
 
 <div class="row">
 
-    <div class="medium-8 columns" id="all_lists">
+    <div class="medium-7 columns" id="all_lists">
         <% if @lists.any? %>
             <% @lists.each do |list| %>
                 <li><%= link_to "#{list.title}", list_path(id: list.id) %></li>
             <% end %>
         <% end %>
     </div>  
-    <div class="medium-4 columns">
-        <div class="create-list">
+    <div class="medium-5 columns">
+        <div class="create-form">
             <h3>Create a new list</h3>
             <%= form_for(@list, remote: true) do |f| %>
                 <%= f.text_field :title, placeholder: "Enter list title" %>

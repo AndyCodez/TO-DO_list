@@ -56,8 +56,11 @@
 }
 
 .cards {
+    padding: 10px;
+    border-radius: 2%;
+    box-shadow: 2px 2px 2px #2199E8;
     border: 1px solid black;
-    margin: 20px;
+    margin-top: 5px;
 }
 
 .label a{
@@ -79,9 +82,10 @@
     color: #FFF;
 }
 
-.create-list {
+.create-form {
     padding: 10px;
-    width: 600px;
+    width: 400px;
     position: fixed;
      box-shadow: 2px 2px 2px #001;
 }
+
