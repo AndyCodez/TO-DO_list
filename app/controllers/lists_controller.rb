@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   before_action :correct_user, only: [:show]
-  skip_before_filter :verify_authenticity_token, :only => :create
+  skip_before_action :verify_authenticity_token, :only => :create
 
   def create
     @list = current_user.lists.build(list_params)

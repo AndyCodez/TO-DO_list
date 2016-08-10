@@ -1,7 +1,6 @@
 class CardsController < ApplicationController
   before_action :correct_user, only: [:move_card, :choose_list]
-
-  skip_before_filter :verify_authenticity_token, :only => :create
+  skip_before_action :verify_authenticity_token, :only => :create
 
 
   def create
