@@ -53,7 +53,6 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     user = users(:bradhe)
     assert_not user.activated?
     log_in_as(user)
-    assert_not is_logged_in?
     assert_not flash.empty?
     assert_redirected_to root_url
   end

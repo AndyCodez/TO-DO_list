@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
   resources :sessions
-  resources :account_activations, only: [:edit]
+  resources :account_activations, only: [:new, :edit, :create]
   resources :lists
   resources :cards
   resources :items, only: [:new, :create]

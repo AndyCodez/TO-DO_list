@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       if time_from_signup(user) > 2.days && !user.activated?
         #Deny full access to app functionality
+        log_in user
         flash[:danger] = "Please check your email and activate your account."
         redirect_to root_url
       else

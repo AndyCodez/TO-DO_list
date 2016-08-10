@@ -1,0 +1,7 @@
+<p>Enter your email address:</p>
+
+<%= form_for(:account_activation, url: account_activations_url) do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <%= f.submit %>
+<% end %>

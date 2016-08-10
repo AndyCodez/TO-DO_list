@@ -44,14 +44,20 @@ class User < ApplicationRecord
 
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
+    update_attribute(:activation_sent_at, Time.zone.now)
   end
-  private
-    
-    #Creates and assigns the activation token and digest
+    #Returns true if an activation token has expired
+  def activation_token_expired?
+    activation_sent_at < 7.days.ago
+  end
+
+  #Creates and assigns the activation token and digest
     def create_activation_digest
       self.activation_token = User.new_token
       self.activation_digest = User.digest(activation_token)
     end
+
+  private
   
     #Converts email to all lowercase
     def downcase_email
