@@ -1,8 +1,7 @@
 class CardsController < ApplicationController
-  def new
-    @list = List.find_by(id: params[:list_id])
-    @card = Card.new
-  end
+
+  skip_before_filter :verify_authenticity_token, :only => :create
+
 
   def create
     #To help create card related to this list
@@ -10,12 +9,18 @@ class CardsController < ApplicationController
     list = List.find_by(id: params[:list_id])
     @card = list.cards.build(card_params)
     if @card.save
+      #Flash and redirect to the same list
       flash[:success] = "Card added!"
       #Redirect to the same list 
       redirect_to list_path(id: list.id)
     else
-      flash.now[:danger] = "Something went wrong, please try again."
-      render 'new'
+      flash[:danger] = "Something went wrong, please try again."
+      respond_to do |format|
+        #Executes if js is disabled on browser
+        format.html { redirect_to list_path(id: list.id)}
+        #Executes if js is enabled on browser
+        format.js { redirect_to list_path(id: list.id) }
+      end
     end
   end
 

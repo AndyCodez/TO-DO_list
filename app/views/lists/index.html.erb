@@ -1,24 +1,25 @@
-<h3>All lists | 
-    <%= link_to "Accepted Requests", accepted_requests_list_path %>
-</h3>
+<div id="lists_page">
+    <h3>All lists | 
+        <%= link_to "Accepted Requests", accepted_requests_list_path %>
+    </h3>
 
-<div class="row">
+    <div class="row">
 
-    <div class="medium-7 columns" id="all_lists">
-        <% if @lists.any? %>
-            <% @lists.each do |list| %>
-                <li><%= link_to "#{list.title}", list_path(id: list.id) %></li>
+        <div class="medium-7 columns" id="all_lists">
+            <% if @lists.any? %>
+                <% @lists.each do |list| %>
+                    <li><%= link_to "#{list.title}", list_path(id: list.id) %></li>
+                <% end %>
             <% end %>
-        <% end %>
-    </div>  
-    <div class="medium-5 columns">
-        <div class="create-form">
-            <h3>Create a new list</h3>
-            <%= form_for(@list, remote: true) do |f| %>
-                <%= f.text_field :title, placeholder: "Enter list title" %>
-                <%= f.submit "Create List" %>
-            <% end %>
+        </div>  
+        <div class="medium-5 columns">
+            <div class="create-form">
+                <h3>Create a new list</h3>
+                <%= form_for(@list, remote: true) do |f| %>
+                    <%= f.text_field :title, placeholder: "Enter list title" %>
+                    <%= f.submit "Create List" %>
+                <% end %>
+            </div>
         </div>
     </div>
 </div>
-

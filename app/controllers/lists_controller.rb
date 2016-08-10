@@ -14,7 +14,12 @@ class ListsController < ApplicationController
       end
     else
       flash[:danger] = "Something went wrong, please try adding a list again."
-      render 'new'
+      respond_to do |format|
+        #Executes if js is disabled on browser
+        format.html { redirect_to lists_path }
+        #Executes if js is enabled on browser
+        format.js { redirect_to lists_path }
+      end
     end
   end
 
