@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+  before_action :correct_user, only: [:move_card, :choose_list]
 
   skip_before_filter :verify_authenticity_token, :only => :create
 
@@ -40,5 +41,12 @@ class CardsController < ApplicationController
   private
     def card_params
       params.require(:card).permit(:title, :description)
+    end
+
+    #Confirms the correct user
+    def correct_user
+      list = current_user.lists.find_by(params[:list_id])      
+      card = list.cards.find_by(id: params[:card_id])
+      redirect_to root_url if card.nil?
     end
 end
