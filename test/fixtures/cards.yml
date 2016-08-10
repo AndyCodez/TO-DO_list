@@ -4,5 +4,5 @@ card_one:
     id: 1
     title: MyString
     description: MyText
-    list: listi
+    list_id: 2
 

@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 listi:
-    # id: 2
-    # user_id: 1
+    id: 2
+    user_id: 1
     title: Ndio Listi Hii
 
 another_list:
-    # id: 3
-    # user_id: 1
+    id: 3
+    user_id: 1
     title: MyString
